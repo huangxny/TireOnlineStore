@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SortButtons = ({setSortOption, setSortDirection, sortDirection}) => {
   return (
     <div className='sortButtons'>

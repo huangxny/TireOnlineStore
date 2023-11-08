@@ -1,4 +1,3 @@
-import React from 'react';
 import AddToCart from './AddToCart.jsx';
 
 const ProductGridContainer = ({ products, removeProduct, email, cart, setCart }) => {

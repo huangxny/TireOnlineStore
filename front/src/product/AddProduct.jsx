@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AddProduct = ({newProduct, setNewProduct, addProduct}) => {
   return (
     <div className='add product'>

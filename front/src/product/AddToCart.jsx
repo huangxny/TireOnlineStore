@@ -1,5 +1,3 @@
-import React from "react";
-
 function AddToCart({ product_id, cart, setCart, email}) {
   let updatedCart = [...cart];
 
