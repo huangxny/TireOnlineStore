@@ -42,6 +42,7 @@ function App() {
           <Link to={"/login"}>Login</Link> <br />
           <Link to={"/register"}>Register</Link> <br />
           <Link to={"/cart"}>Cart</Link> <br />
+          <h3>Note: free server is running slow. Please give few seconds before content react to your action!</h3>
         </div>
         <hr />
         <Routes>

@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const connectDB = async (selectedCollection) => {
-  const mongoUrl = 'mongodb+srv://huangxny:sTrohg55pzkwnmO7@cluster0.s1qbuus.mongodb.net/?retryWrites=true&w=majority';
+  const mongoUrl = process.env.MONGODB_URI;
   const client = new MongoClient(mongoUrl);
   await client.connect();
   const db = await client.db('mern-auth');
