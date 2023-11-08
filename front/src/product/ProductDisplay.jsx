@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import AddProduct from './AddProduct.jsx';
 import AddToCart from './AddToCart.jsx';
 import Pagination from './Pagination.jsx';
+import SortButtons from './SortButtons.jsx';
+import ProductGridContainer from './ProductGridContainer.jsx';
 
-const ProductGrid = ({cart, setCart, email}) => {
+const ProductDisplay = ({cart, setCart, email}) => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ name:'', price: '', width: '', diameter: '', aspectRatio: '' });
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,27 +61,11 @@ const ProductGrid = ({cart, setCart, email}) => {
     <div className='productDisplay'>
       <h1>Tire Store</h1>
       <AddProduct newProduct={newProduct} setNewProduct={setNewProduct} addProduct={addProduct} />
-      <div className='sortButtons'>
-        <button onClick={() => setSortOption('diameter')}>Sort by Diameter</button>
-        <button onClick={() => setSortOption('width')}>Sort by Width</button>
-        <button onClick={() => setSortOption('name')}>Sort by Name</button>
-        <button onClick={() => setSortOption('price')}>Sort by Price</button>
-        <button onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}>
-          {sortDirection === 'asc' ? 'Descending Order' : 'Ascending Order'}
-        </button>
-      </div>
-      <ul className='gridContainer'>
-        {currentProducts.map((product) => (
-          <li className='item' key={product._id}>
-            Name: {product.name} -- {product.width}/{product.aspectRatio}R{product.diameter} - ${product.price}{' '}
-            <button onClick={() => removeProduct(product._id)}>Delete</button>
-            <AddToCart product_id={product._id} email={email} cart={cart} setCart={setCart}/>
-          </li>
-        ))}
-      </ul>
+      <SortButtons setSortOption={setSortOption} setSortDirection={setSortDirection} sortDirection={sortDirection}/>
+      <ProductGridContainer products={currentProducts} removeProduct={removeProduct} email={email} cart={cart} setCart={setCart} />
       <Pagination currentPage={currentPage} itemsPerPage={itemsPerPage} totalItems={products.length} paginate={paginate} />
     </div>
   );
 };
 
-export default ProductGrid;
+export default ProductDisplay;

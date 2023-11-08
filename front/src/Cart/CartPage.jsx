@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import AddToCart from "../product/AddToCart.jsx";
 
 
-function CartPage({cart, setCart}) {
+function CartPage({cart, setCart, email}) {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ function CartPage({cart, setCart}) {
               <li key={product._id}>
                 Name: {product.name} -- {product.width}/{product.aspectRatio}R{product.diameter} -
                 ${product.price} (Quantity: {product.quantity})
+                <AddToCart product_id={product._id} email={email} cart={cart} setCart={setCart}/>
               </li>
             ))}
           </ul>

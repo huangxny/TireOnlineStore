@@ -73,7 +73,6 @@ function AddToCart({ product_id, cart, setCart, email}) {
       <div>Quantity: {getQuantity()}</div>
       <button onClick={handleMinusOne}>-1</button>
     </div>
-      /* You can also display the quantity of the product in the cart here */
   );
 }
 

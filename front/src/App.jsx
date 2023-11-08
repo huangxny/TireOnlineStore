@@ -4,7 +4,7 @@ import Register from "./user/Register.jsx";
 import Login from "./user/Login.jsx";
 import Logout from "./user/Logout.jsx";
 import UserContext from "./user/UserContext.jsx";
-import ProductGrid from "./product/ProductGrid.jsx";
+import ProductDisplay from "./product/ProductDisplay.jsx";
 import CartPage from "./Cart/CartPage.jsx";
 
 
@@ -49,7 +49,7 @@ function App() {
           <Route path={"/login"} element={<Login/>}/>
           <Route path={"/cart"} element={<CartPage cart={cart} setCart={setCart} email={email}/>}/>
         </Routes>
-        <ProductGrid cart={cart} setCart={setCart} email={email}/>
+        <ProductDisplay cart={cart} setCart={setCart} email={email}/>
       </BrowserRouter>
     </UserContext.Provider>
 
