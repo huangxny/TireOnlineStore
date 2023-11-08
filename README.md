@@ -11,9 +11,9 @@ Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
 Deployed Link: https://tire-store.onrender.com/
 
-Video:
+Video: https://youtu.be/x8qGvV5bAas
 
-Slide:
+Slide: https://docs.google.com/presentation/d/1x2TQDMima5W9avYuwBohqxarRmwFDiJgMfMDT77gyWk/edit?usp=sharing
 
 Design Doc: https://docs.google.com/document/d/1-i64uskwFKd0kgt28FHCnywp8nk7NkniDFPyc1ohYEw/edit?usp=sharing
 
