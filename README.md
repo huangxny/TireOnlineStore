@@ -35,12 +35,12 @@ NPM: Package manager for NodeJS
 
 # Instruction to build:
 1. Download the project from github
-2. Run npm install on root folder
-3. CD front, then run npm install in front (react) folder
-4. Run npm run build in front (react) folder
+2. Run $ npm install on root folder
+3. $ cd front, then run $ npm install in front (react) folder
+4. Run $ npm run build in front (react) folder
 5. Supply your own .env file containing MongoDB_URI to the root folder
-6. CD .. go back to root folder
-7. Use npm start to start the server
+6. $ cd .. go back to root folder
+7. Use $ npm start to start the server
 8. Open the browser and go to localhost:3000 to view the website
 
 Screenshot:
