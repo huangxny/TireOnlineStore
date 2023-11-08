@@ -4,6 +4,7 @@ import Register from "./user/Register.jsx";
 import Login from "./user/Login.jsx";
 import Logout from "./user/Logout.jsx";
 import UserContext from "./user/UserContext.jsx";
+import ProductGrid from "./product/ProductGrid.jsx";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path={"/register"} element={<Register/>}/>
           <Route path={"/login"} element={<Login/>}/>
         </Routes>
+        <ProductGrid/>
       </BrowserRouter>
     </UserContext.Provider>
 
