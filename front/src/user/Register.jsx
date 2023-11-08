@@ -1,6 +1,7 @@
 import {useState, useContext} from "react";
 import UserContext from "./UserContext.jsx";
 import {useNavigate} from "react-router-dom";
+import '../style/user/Login-Register.css'
 
 function Register() {
   const [email, setEmail] = useState('')
