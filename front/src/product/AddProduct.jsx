@@ -1,5 +1,4 @@
-import React from 'react';
-
+import PropTypes from "prop-types";
 const AddProduct = ({newProduct, setNewProduct, addProduct}) => {
   return (
     <div className='add product'>
@@ -36,6 +35,11 @@ const AddProduct = ({newProduct, setNewProduct, addProduct}) => {
       <button onClick={addProduct}>Add Tire</button>
     </div>
   );
+};
+AddProduct.propTypes = {
+  newProduct: PropTypes.object,
+  setNewProduct: PropTypes.func,
+  addProduct: PropTypes.func,
 };
 
 export default AddProduct;

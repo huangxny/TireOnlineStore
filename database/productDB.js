@@ -1,10 +1,10 @@
-import connectDB from "./connectDB.js";
-import {ObjectId} from 'mongodb';
+import connectDB from './connectDB.js';
+import { ObjectId } from 'mongodb';
 
 function productDb() {
   const me = {};
   me.insertOne = async (tire) => {
-    const {client, collection} = await connectDB('product');
+    const { client, collection } = await connectDB('product');
     try {
       return await collection.insertOne(tire);
     } finally {
@@ -13,28 +13,27 @@ function productDb() {
   };
 
   me.getAllProduct = async (sortField, sortOrder) => {
-    const {client, collection} = await connectDB('product');
+    const { client, collection } = await connectDB('product');
     try {
       const sortOptions = {};
       sortOptions[sortField] = sortOrder === 'asc' ? 1 : -1;
-      console.log(sortOptions);
       return await collection.find().sort(sortOptions).toArray();
     } finally {
       await client.close();
     }
   };
- me.getProductById = async (id) => {
-    const {client, collection} = await connectDB('product');
+  me.getProductById = async (id) => {
+    const { client, collection } = await connectDB('product');
     try {
-      return await collection.findOne({_id: new ObjectId(id)});
+      return await collection.findOne({ _id: new ObjectId(id) });
     } finally {
       await client.close();
     }
-  }
+  };
   me.deleteOne = async (id) => {
-    const {client, collection} = await connectDB('product');
+    const { client, collection } = await connectDB('product');
     try {
-      return await collection.deleteOne({_id: new ObjectId(id)});
+      return await collection.deleteOne({ _id: new ObjectId(id) });
     } finally {
       await client.close();
     }
@@ -43,4 +42,3 @@ function productDb() {
 }
 
 export const productDB = productDb();
-

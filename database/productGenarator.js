@@ -1,7 +1,6 @@
-import {MongoClient} from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 const uri = 'add uri only when testing';
-console.log(uri);
 const dbName = 'mern-auth';
 const collectionName = 'product';
 
@@ -28,8 +27,11 @@ async function insertRandomProducts(client) {
   }
 
   await collection.insertMany(products);
-  console.log(`Inserted ${numberOfProductsToGenerate} random products into the ${collectionName} collection.`);
+  console.log(
+    `Inserted ${numberOfProductsToGenerate} random products into the ${collectionName} collection.`,
+  );
 }
+// eslint-disable-next-line no-unused-vars
 async function emptyCollection(client) {
   const database = client.db(dbName);
   const collection = database.collection(collectionName);
@@ -40,7 +42,6 @@ async function run() {
   const client = new MongoClient(uri);
   try {
     await client.connect();
-    console.log('Connected to the database.');
     await insertRandomProducts(client);
     //await emptyCollection(client);
   } finally {

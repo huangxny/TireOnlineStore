@@ -1,4 +1,4 @@
-import {MongoClient} from 'mongodb';
+import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -9,7 +9,7 @@ const connectDB = async (selectedCollection) => {
   await client.connect();
   const db = await client.db('mern-auth');
   const collection = db.collection(selectedCollection);
-  return {client, collection};
-}
+  return { client, collection };
+};
 
 export default connectDB;
