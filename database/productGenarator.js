@@ -1,9 +1,6 @@
 import {MongoClient} from 'mongodb';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const uri = 'mongodb+srv://huangxny:sTrohg55pzkwnmO7@cluster0.s1qbuus.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'add uri only when testing';
 console.log(uri);
 const dbName = 'mern-auth';
 const collectionName = 'product';

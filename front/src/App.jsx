@@ -6,7 +6,7 @@ import Logout from "./user/Logout.jsx";
 import UserContext from "./user/UserContext.jsx";
 import ProductDisplay from "./product/ProductDisplay.jsx";
 import CartPage from "./Cart/CartPage.jsx";
-
+import './style/App.css'
 
 function App() {
   const [email, setEmail] = useState('')

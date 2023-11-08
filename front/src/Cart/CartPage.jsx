@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import AddToCart from "../product/AddToCart.jsx";
+import '../style/cart/CartPage.css'
 
 
 function CartPage({cart, setCart, email}) {
