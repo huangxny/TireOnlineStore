@@ -5,10 +5,12 @@ import Login from "./user/Login.jsx";
 import Logout from "./user/Logout.jsx";
 import UserContext from "./user/UserContext.jsx";
 import ProductGrid from "./product/ProductGrid.jsx";
+import CartPage from "./Cart/CartPage.jsx";
 
 
 function App() {
   const [email, setEmail] = useState('')
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     fetch('/user', {
@@ -19,6 +21,7 @@ function App() {
       .then(async (res) => {
         const data = await res.json();
         setEmail(data.user.email);
+        setCart(data.user.cart);
       })
       .catch(() => {
         setEmail('');
@@ -38,13 +41,15 @@ function App() {
           <Link to={"/"}>Home</Link> <br/>
           <Link to={"/login"}>Login</Link> <br/>
           <Link to={"/register"}>Register</Link> <br/>
+          <Link to={"/cart"}>Cart</Link> <br/>
         </div>
         <hr/>
         <Routes>
           <Route path={"/register"} element={<Register/>}/>
           <Route path={"/login"} element={<Login/>}/>
+          <Route path={"/cart"} element={<CartPage cart={cart} setCart={setCart} email={email}/>}/>
         </Routes>
-        <ProductGrid/>
+        <ProductGrid cart={cart} setCart={setCart} email={email}/>
       </BrowserRouter>
     </UserContext.Provider>
 

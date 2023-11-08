@@ -6,7 +6,7 @@ import {fileURLToPath} from "url";
 import bodyParser from 'body-parser';
 import indexRouter from './routes/userRouter.js';
 import productRouter from './routes/productRouter.js';
-
+import cartRouter from './routes/cartRouter.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -21,4 +21,5 @@ app.use(express.static(path.join(__dirname, 'front', 'dist')));
 
 app.use('/', indexRouter);
 app.use('/product', productRouter);
+app.use('/cart', cartRouter);
 export default app;

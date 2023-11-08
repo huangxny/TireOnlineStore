@@ -32,6 +32,15 @@ function userDb() {
       await client.close();
     }
   }
+  me.updateCart = async (email, cart) => {
+    const {client, collection} = await connectDB('user');
+    const res = await collection.updateOne({email: email}, {$set: {cart: cart}});
+    try {
+      return res;
+    } finally {
+      await client.close();
+    }
+  }
   return me;
 }
 

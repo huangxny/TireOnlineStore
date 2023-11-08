@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AddProduct from './AddProduct.jsx';
-const ProductGrid = () => {
+import AddToCart from './AddToCart.jsx';
+
+const ProductGrid = ({cart, setCart, email}) => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ name:'', price: '', width: '', diameter: '', aspectRatio: '' });
 
@@ -53,6 +55,7 @@ const ProductGrid = () => {
           <li className='item' key={product._id}>
             Name: {product.name} -- {product.width}/{product.aspectRatio}R{product.diameter} - ${product.price}{' '}
             <button onClick={() => removeProduct(product._id)}>Delete</button>
+            <AddToCart product_id={product._id} email={email} cart={cart} setCart={setCart}/>
           </li>
         ))}
       </ul>
