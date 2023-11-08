@@ -5,6 +5,7 @@ import logger from 'morgan';
 import {fileURLToPath} from "url";
 import bodyParser from 'body-parser';
 import indexRouter from './routes/userRouter.js';
+import productRouter from './routes/productRouter.js';
 
 
 const app = express();
@@ -19,4 +20,5 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'front', 'dist')));
 
 app.use('/', indexRouter);
+app.use('/product', productRouter);
 export default app;
