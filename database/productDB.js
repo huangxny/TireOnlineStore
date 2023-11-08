@@ -12,10 +12,13 @@ function productDb() {
     }
   };
 
-  me.getAllProduct = async (query) => {
+  me.getAllProduct = async (sortField, sortOrder) => {
     const {client, collection} = await connectDB('product');
     try {
-      return await collection.find(query).toArray();
+      const sortOptions = {};
+      sortOptions[sortField] = sortOrder === 'asc' ? 1 : -1;
+      console.log(sortOptions);
+      return await collection.find().sort(sortOptions).toArray();
     } finally {
       await client.close();
     }

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AddProduct from './AddProduct.jsx';
 import AddToCart from './AddToCart.jsx';
+import Pagination from './Pagination.jsx';
 
 const ProductGrid = ({cart, setCart, email}) => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ name:'', price: '', width: '', diameter: '', aspectRatio: '' });
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortOption, setSortOption] = useState('name');
+  const [sortDirection, setSortDirection] = useState('asc');
+  const itemsPerPage = 20;
   const addProduct = async () => {
     const response = await fetch('/product/tires', {
       method: 'POST',
@@ -28,7 +32,7 @@ const ProductGrid = ({cart, setCart, email}) => {
   };
 
   const fetchProduct = async () => {
-    fetch('/product/tires', {
+    fetch(`/product/tires?sort=${sortOption}&order=${sortDirection}`, {
       method: 'GET',
       credentials: 'include',
       headers: {'Content-Type': 'application/json'}
@@ -42,16 +46,30 @@ const ProductGrid = ({cart, setCart, email}) => {
       });
   }
 
-  useEffect(async () => {
-    await fetchProduct();
-  }, []);
+  useEffect( () => {
+     fetchProduct();
+  }, [sortOption, sortDirection, currentPage]);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className='productDisplay'>
       <h1>Tire Store</h1>
       <AddProduct newProduct={newProduct} setNewProduct={setNewProduct} addProduct={addProduct} />
+      <div className='sortButtons'>
+        <button onClick={() => setSortOption('diameter')}>Sort by Diameter</button>
+        <button onClick={() => setSortOption('width')}>Sort by Width</button>
+        <button onClick={() => setSortOption('name')}>Sort by Name</button>
+        <button onClick={() => setSortOption('price')}>Sort by Price</button>
+        <button onClick={() => setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')}>
+          {sortDirection === 'asc' ? 'Descending Order' : 'Ascending Order'}
+        </button>
+      </div>
       <ul className='gridContainer'>
-        {products.map((product) => (
+        {currentProducts.map((product) => (
           <li className='item' key={product._id}>
             Name: {product.name} -- {product.width}/{product.aspectRatio}R{product.diameter} - ${product.price}{' '}
             <button onClick={() => removeProduct(product._id)}>Delete</button>
@@ -59,6 +77,7 @@ const ProductGrid = ({cart, setCart, email}) => {
           </li>
         ))}
       </ul>
+      <Pagination currentPage={currentPage} itemsPerPage={itemsPerPage} totalItems={products.length} paginate={paginate} />
     </div>
   );
 };

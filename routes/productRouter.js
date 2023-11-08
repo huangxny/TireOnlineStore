@@ -30,7 +30,13 @@ productRouter.post('/tires', (req, res) => {
 
 productRouter.get('/tires', async (req, res) => {
   try {
-    const tires = await productDB.getAllProduct();
+    const { sort, order } = req.query;
+    let tires;
+    if (sort && order) {
+      tires = await productDB.getAllProduct(sort, order);
+    } else {
+      tires = await productDB.getAllProduct();
+    }
     res.status(200).json(tires);
   } catch (error) {
     console.error(error);
