@@ -1,5 +1,5 @@
 import AddToCart from './AddToCart.jsx';
-
+import PropTypes from "prop-types";
 const ProductGridContainer = ({ products, removeProduct, email, cart, setCart }) => {
   return (
     <ul className='gridContainer'>
@@ -14,4 +14,11 @@ const ProductGridContainer = ({ products, removeProduct, email, cart, setCart })
   );
 };
 
+ProductGridContainer.propTypes = {
+  products: PropTypes.array,
+  removeProduct: PropTypes.func,
+  email: PropTypes.string,
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
+}
 export default ProductGridContainer;

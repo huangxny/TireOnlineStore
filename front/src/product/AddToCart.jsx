@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 function AddToCart({ product_id, cart, setCart, email}) {
   let updatedCart = [...cart];
 
@@ -73,5 +74,12 @@ function AddToCart({ product_id, cart, setCart, email}) {
     </div>
   );
 }
+
+AddToCart.propTypes = {
+  product_id: PropTypes.string,
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
+  email: PropTypes.string
+};
 
 export default AddToCart;

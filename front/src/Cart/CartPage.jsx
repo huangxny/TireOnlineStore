@@ -2,7 +2,7 @@ import  {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import AddToCart from "../product/AddToCart.jsx";
 import '../style/cart/CartPage.css'
-
+import PropTypes from "prop-types";
 
 function CartPage({cart, setCart, email}) {
   const [cartItems, setCartItems] = useState([]);
@@ -61,5 +61,10 @@ function CartPage({cart, setCart, email}) {
   );
 }
 
+CartPage.propTypes = {
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
+  email: PropTypes.string,
+}
 export default CartPage;
 

@@ -3,6 +3,7 @@ import AddProduct from "./AddProduct.jsx";
 import Pagination from "./Pagination.jsx";
 import SortButtons from "./SortButtons.jsx";
 import ProductGridContainer from "./ProductGridContainer.jsx";
+import PropTypes from "prop-types";
 
 const ProductDisplay = ({ cart, setCart, email }) => {
   const [products, setProducts] = useState([]);
@@ -97,5 +98,11 @@ const ProductDisplay = ({ cart, setCart, email }) => {
     </div>
   );
 };
+
+ProductDisplay.propTypes = {
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
+  email: PropTypes.string,
+}
 
 export default ProductDisplay;

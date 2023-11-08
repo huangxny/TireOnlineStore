@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const SortButtons = ({setSortOption, setSortDirection, sortDirection}) => {
   return (
     <div className='sortButtons'>
@@ -12,4 +13,9 @@ const SortButtons = ({setSortOption, setSortDirection, sortDirection}) => {
   );
 };
 
+SortButtons.propTypes = {
+  setSortOption: PropTypes.func,
+  setSortDirection: PropTypes.func,
+  sortDirection: PropTypes.string,
+}
 export default SortButtons;
