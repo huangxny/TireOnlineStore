@@ -67,3 +67,5 @@ productRouter.delete('/tires/:id', (req, res) => {
     });
 });
 export default productRouter;
+
+// maybe add a put API endpoint as well
