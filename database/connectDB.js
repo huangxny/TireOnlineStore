@@ -8,7 +8,7 @@ const connectDB = async (selectedCollection) => {
   const client = new MongoClient(mongoUrl);
   await client.connect();
   const db = await client.db('mern-auth');
-  const collection = db.collection(selectedCollection);
+  const collection = db.collection(selectedCollection); 
   return { client, collection };
 };
 
