@@ -1,5 +1,8 @@
 # TireOnlineStore
-CS5610 project 3: online tire store
+
+// Add a description of what the project is
+
+Online tire store
 
 Author: Xinyuan Huang & YueWu
 
@@ -17,10 +20,11 @@ Slide: https://docs.google.com/presentation/d/1x2TQDMima5W9avYuwBohqxarRmwFDiJgM
 
 Design Doc: https://docs.google.com/document/d/1-i64uskwFKd0kgt28FHCnywp8nk7NkniDFPyc1ohYEw/edit?usp=sharing
 
-# Project Objective:
+## Project Objective:
 Learn and practice MERN web developing
+// maybe you can add -> more objectives related to the functionality of the project
 
-# Tech Requirement:
+## Tech Requirement: // nice job with the tech requirements 
 Code Editor: such as Visual Studio Code
 
 Browser: Modern browsers like Google Chrome, Mozilla Firefox, Safari, or Microsoft Edge for testing and viewing the website.
@@ -33,7 +37,7 @@ NodeJS: Server-side JavaScript runtime environment
 
 NPM: Package manager for NodeJS
 
-# Instruction to build:
+## Instruction to build: // nice job
 1. Download the project from github
 2. Run $ npm install on root folder
 3. $ cd front, then run $ npm install in front (react) folder
@@ -43,7 +47,7 @@ NPM: Package manager for NodeJS
 7. Use $ npm start to start the server
 8. Open the browser and go to localhost:3000 to view the website
 
-Screenshot:
+## Screenshot:
 - Login & Logout
 ![image](https://github.com/huangxny/TireOnlineStore/assets/122572615/a259a925-7dc1-4b5a-8809-85e8adf88422)
 - Signup
@@ -52,3 +56,9 @@ Screenshot:
 ![image](https://github.com/huangxny/TireOnlineStore/assets/122572615/789c2f8d-be36-40de-a9e4-cffe6d8fda3e)
 - Multiple Page
 ![image](https://github.com/huangxny/TireOnlineStore/assets/122572615/3956641e-81d7-40db-adbd-9978c19b0ee5)
+
+//Add usage and features sections for the project
+
+// add configuration section 
+
+// add license and maybe credits section 
