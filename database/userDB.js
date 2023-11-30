@@ -52,3 +52,6 @@ function userDb() {
 }
 
 export const userDB = userDb();
+
+// maybe add a method to update user info and delete user accounts
+
