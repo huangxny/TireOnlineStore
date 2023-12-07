@@ -15,7 +15,8 @@ function Logout() {
       navigate("/");
     });
   }
-
+  // Code Reviewer: consider disabling the button
+  // if not loogged in or changing the text to log if not logged in 
   return <button onClick={handleLogout}>Logout</button>;
 }
 
