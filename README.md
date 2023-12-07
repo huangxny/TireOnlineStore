@@ -1,5 +1,5 @@
 # TireOnlineStore
-CS5610 project 3: online tire store
+CS5610 project 3: online tire store 
 
 Author: Xinyuan Huang & YueWu
 
